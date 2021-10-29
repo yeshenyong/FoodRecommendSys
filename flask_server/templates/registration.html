@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="static/assets1/images/favicon.png" type="image/png">
+  <title></title>
+   <link href="static/assets1/css/icons.css" rel="stylesheet">
+    <link href="static/assets1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets1/css/style.css" rel="stylesheet">
+    <link href="static/assets1/css/responsive.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.min.js"></script>
+          <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+
+ <!--Start login Section-->
+  <section class="login-section">
+       <div class="container">
+           <div class="row">
+               <div class="login-wrapper">
+                   <div class="login-inner">
+                       
+                       <div class="logo">
+                         <img src="static/assets1/images/logo-dark.png"  alt="logo"/>
+                       </div>
+                   		
+                   		<h2 class="header-title text-center">注册</h2>
+                        
+                       <form action="/registration" method="post">
+
+                           <div class="form-group">
+                               <input type="text" class="form-control"  placeholder="Username" name="username">
+                           </div>
+
+                           <div class="form-group">
+                               <input type="password" class="form-control"  placeholder="Password" name="password">
+                           </div>
+
+						<div class="form-group">
+                           <div class="pull-left">
+                               <div class="checkbox primary">
+                              <input  id="checkbox-1" type="checkbox">
+                              <label for="checkbox-1">我接受 <a href="#">用户协议</a></label>
+                            </div>
+                           </div>
+                         </div>
+                          
+                           <div class="form-group">
+                               <input type="submit" value="注册" class="btn btn-primary btn-block" >
+                           </div>
+                           
+                           <div class="form-group text-center">
+                            已有账号  <a href="{{ url_for('login') }}">登录</a>
+                           </div>
+                           
+                       </form>
+                       
+                        <div class="copy-text"> 
+                         <p class="m-0">{{ result }}</p>
+                        </div>
+                    
+                   </div>
+               </div>
+               
+           </div>
+       </div>
+  </section>
+ <!--End login Section-->
+<!-- 测试 -->
+<script type="text/javascript">
+function __changeUserName(of){
+  var username=$('#'+of).val();
+  if(of=='email'){
+	  if (username.search(/[\w]+(\.[\w]+)*@[\w]+(\.[\w])+/) == -1) {
+			showTooltips('email_input','请输入正确的Email地址');
+			return;
+	}
+  }
+  else{
+	  if(username=='' || !isMobilePhone(username)) {
+		  showTooltips('mobile_input','请输入正确的手机号码');
+		  return;
+	  }
+  }
+}
+function checkPwd1(pwd1) {
+	if (pwd1.search(/^.{6,20}$/) == -1) {
+		showTooltips('password1_input','密码为空或位数太少');
+	}else {
+		hideTooltips('password1_input');
+	}
+}
+function checkName1(pwd2) {
+	if (pwd2.search(/^.{6,20}$/) == -1) {
+		showTooltips('name1_input','用户名为空或位数太少');
+	}else {
+		hideTooltips('name1_input');
+	}
+}
+function checkEmail(email) {
+	if (email.search(/^.+@.+$/) == -1) {
+		showTooltips('email_input','邮箱格式不正确');
+	}else {
+		hideTooltips('email_input');
+	}
+}
+
+// 检查函数
+function check() {
+	hideAllTooltips();
+	var ckh_result = true;
+	if ($('#email').val() == '' || $('#email').val().search(/^.+@.+$/) == -1) {
+	showTooltips('email_input','邮箱为空或格式不正确');
+	ckh_result = false;
+  }
+  if ($('#password1').val() == '' || $('#password1').val().search(/^.{6,20}$/) == -1) {
+	showTooltips('password1_input','密码为空或者长度不够');
+	ckh_result = false;
+  }
+	if ($('#name1').val() == '' || $('#name1').val().search(/^.{6,20}$/) == -1) {
+	showTooltips('name1_input','用户名为空或者格式不正确');
+	ckh_result = false;
+	}
+	if (document.getElementById("verify").checked==false) {
+	showTooltips('CheckBox_input','请勾选准则，表示同意平台的规则');
+	ckh_result = false;
+	}
+
+  return ckh_result;
+}
+
+</script>
+
+    
+
+
+    <!--Begin core plugin -->
+    <script src="static/assets1/js/jquery.min.js"></script>
+    <script src="static/assets1/js/bootstrap.min.js"></script>
+    <script src="static/assets1/plugins/moment/moment.js"></script>
+    <script  src="static/assets1/js/jquery.slimscroll.js "></script>
+    <script src="static/assets1/js/jquery.nicescroll.js"></script>
+    <script src="static/assets1/js/functions.js"></script>
+    <!-- End core plugin -->
+       
+
+</body>
+
+</html>

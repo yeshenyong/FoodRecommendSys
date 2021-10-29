@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>用户食品推荐系统</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mamba - v2.0.1
+  * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="index.html"><span>食品推荐系统</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header">首页</a></li>
+          <li><a href="#portfolio">推荐菜品</a></li>
+          <li><a href="#team">热门菜肴</a></li>
+
+          <li><a href="#contact">联系我们</a></li>
+          <li><a href="{{ url_for('login') }}">登录</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url('https://i3.meishichina.com/attachment/magic/2021/10/14/2021101416341783795548197577.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animated fadeInDown">莲藕排骨汤 <span></span></h2>
+                <p class="animated fadeInUp">莲藕排骨汤是一道传统名菜，属于鄂菜系，制作原料主要有猪排骨、莲藕、盐等。是千湖之省、水乡泽国和莲藕之乡的湖北名菜。
+在湖北，素有“无汤不成席”的说法，举凡筵宴，压轴戏必然是一罐鲜醇香美的汤。湖北人爱喝汤，也很会做汤，莲藕排骨汤、瓦罐鸡汤、鱼圆汤均为汤中佳品，待客上选。尤其是用被誉为“水中之宝”的洪湖莲藕做出来的“莲藕排骨汤”，更是极具地域特色，浓缩了荆楚美食文化的精华。
+2018年9月10日，“中国菜”在河南省正式发布，“莲藕排骨汤“被评为“中国菜”之湖北十大经典名菜。</p>
+                <a href="https://baike.baidu.com/item/%E8%8E%B2%E8%97%95%E6%8E%92%E9%AA%A8%E6%B1%A4/3336004" class="btn-get-started animated fadeInUp scrollto" target="_blank">
+                    阅读更多
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url('https://i3.meishichina.com/attachment/magic/2019/09/30/2019093015698130846428197577.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animated fadeInDown">肉夹馍</h2>
+                <p class="animated fadeInUp">肉夹馍是中国陕西省传统特色食物之一。名字意为“肉馅的夹馍”。
+2016年1月，肉夹馍入选陕西省第5批非物质文化遗产名录。 [1]
+陕西地区有使用白吉馍的“腊汁肉夹馍”、宝鸡西府的肉臊子夹馍（肉臊子中放食醋）、潼关的潼关肉夹馍（与白吉馍不同，其馍外观焦黄，条纹清晰，内部呈层状，饼体发胀，皮酥里嫩，火功到家，食用时温度以烫手为佳，且老潼关肉夹馍是热馍夹凉肉，饼酥肉香，爽而不腻）。肉夹馍是陕西著名小吃。</p>
+                <a href="https://baike.baidu.com/item/%E8%82%89%E5%A4%B9%E9%A6%8D/370129" class="btn-get-started animated fadeInUp scrollto">
+                    阅读更多
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background-image: url('https://i3.meishichina.com/attachment/magic/2021/02/26/2021022616143300886098197577.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animated fadeInDown">三明治</h2>
+                <p class="animated fadeInUp">如今的sandwich已不再像当初那样品种单一，它已经发展了许多新品种。例如，有夹鸡或火鸡肉片、咸肉、莴苣、番茄的“夜总会sandwich”，有夹咸牛肉、瑞士奶酪、泡菜并用俄式浇头盖在黑面包片上的“劳本sandwich”，有夹鱼酱、黄瓜、水芹菜、西红柿的“饮茶专用sandwich”等等。在法国，制作sandwich时往往已不用面包片，而是改用面包卷或面卷。除此以外，以法国长棍制成的Sandwich还被称为“潜艇包”。</p>
+                <a href="https://baike.baidu.com/item/%E4%B8%89%E6%98%8E%E6%B2%BB/140768" class="btn-get-started animated fadeInUp scrollto">
+                    阅读更多
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
+            <div class="count-box">
+              <i class="icofont-simple-smile" style="color: #20b38e;"></i>
+              <span data-toggle="counter-up">232</span>
+              <p>满意客户</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="count-box">
+              <i class="icofont-document-folder" style="color: #c042ff;"></i>
+              <span data-toggle="counter-up">521</span>
+              <p>菜肴数量</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
+            <div class="count-box">
+              <i class="icofont-live-support" style="color: #46d1ff;"></i>
+              <span data-toggle="counter-up">1,463</span>
+              <p>网站用户</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
+            <div class="count-box">
+              <i class="icofont-users-alt-5" style="color: #ffb459;"></i>
+              <span data-toggle="counter-up">15</span>
+              <p>合作伙伴</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= recommendation Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="section-title">
+          <h2>推荐菜品</h2>
+{#          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>#}
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">全部菜肴</li>
+              <li data-filter=".filter-app">热门菜肴</li>
+              <li data-filter=".filter-card">精品菜肴</li>
+              <li data-filter=".filter-web">其它菜肴</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+            {% for item in recommendlist %}
+          <div class="col-lg-4 col-md-6 portfolio-item {{ item[-1] }}">
+            <div class="portfolio-wrap">
+              <img src="{{ item[5] }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{ item[0] }}</h4>
+                <p>{{ item[2] }}</p>
+                <div class="portfolio-links">
+                  <a href="{{ item[5] }}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="icofont-eye"></i></a>
+                  <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Our Portfolio Section -->
+
+    <!-- ======= hots Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>热门菜肴</h2>
+          <p>本周名厨热门菜品排行榜出炉啦!本周榜单统计周期</p>
+        </div>
+
+        <div class="row">
+            {% for items in hotList %}
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="member">
+              <div class="pic"><img src="{{ items[5] }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>{{ items[0] }}</h4>
+                <span>{{ items[1] }}</span>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+    <!-- ======= Contact Us Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>联系我们</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="info-box">
+              <i class="bx bx-map"></i>
+              <h3>我的地址</h3>
+              <p>广东科技学院</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-box">
+              <i class="bx bx-envelope"></i>
+              <h3>邮箱地址</h3>
+              <p>info@example.com<br>contact@example.com</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-box ">
+              <i class="bx bx-phone-call"></i>
+              <h3>电话联系</h3>
+              <p>+1558955488 55<br>+1667825444541</p>
+            </div>
+          </div>
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-row">
+                <div class="col-lg-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">发送信息</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Us Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>食品推荐系统</h3>
+            <p>
+              广东科技学院 <br>
+              温镇杰<br><br>
+              <strong>电话:</strong> +1 5589 55488 55<br>
+              <strong>邮箱:</strong> 155895548855@qq.com<br>
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>食品推荐系统</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/ -->
+        Designed by <a href="https://bootstrapmade.com/">温镇杰</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
