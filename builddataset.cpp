@@ -20,7 +20,8 @@ int main()
 	for (int i=1;i <= 100;i++) {
 		for (int j=1;j <= cul;j++) {
 			int dice = rand() % 172 + 1;
-			file << i << "\t" << dice << endl; 
+			int score = rand() % 5 + 1;
+			file << i << "," << dice << "," << score << endl; 
 		}
 	}
 	

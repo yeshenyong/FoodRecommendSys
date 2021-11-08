@@ -1,0 +1,10 @@
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\foodRecommend\ItemOccurenceMapper.java
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\wordcount\WordCountDriver.java
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\wordcount\WordCountMapper.java
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\foodRecommend\RecommendMapper.java
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\foodRecommend\RecommendReduce.java
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\foodRecommend\UserSocreMatrixReduce.java
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\wordcount\WordCountReducer.java
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\foodRecommend\ItemCFMain.java
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\foodRecommend\ItemOccurenceReduce.java
+C:\Users\10505\Desktop\MapReduce\src\main\java\com\food\mapreduce\foodRecommend\UserScoreMatrixMapper.java

@@ -12,6 +12,7 @@ import json
 app = Flask(__name__)
 db = pymysql.connect(host="127.0.0.1", user="root", passwd="123456", db="foodserver")
 cur = db.cursor()
+recommendPath = "D:\\recommend.txt"
 
 LOGIN = 1
 REGIST = 2
@@ -20,14 +21,32 @@ RESET = 3
 # 菜品推荐类型
 RANDKIND = ['filter-card', 'filter-web', 'filter-app']
 
+# 推荐结果
+RECOM_MAP = {}
+
+
+def SolveRecommend(path):
+    for line in open(path):
+        project = line.split("\t")
+        recommend = project[1].split(":")
+        list = []
+        if project[0] in RECOM_MAP.keys():
+            list = RECOM_MAP[project[0]]
+        list.append(recommend[0])
+        RECOM_MAP[project[0]] = list
+
+SolveRecommend(recommendPath)
+
+
 # 首页模块（默认无用户, 冷启动）
 @app.route('/', methods=['GET'])
 def hello_world():
-    recommendlist = GetRecommendResult(0)
+    recommendlist = GetRecommendResult(0, 9)
     hotList = GetHotResult()
     """推荐列表
         {[fid, fname, fcomment, ffunc, fstep, ftaste, url],[...]}
     """
+    print(recommendlist)
     return render_template("index.html", recommendlist=recommendlist, hotList=hotList)
 
 
@@ -80,9 +99,11 @@ def login_check():
     cur.execute(sql)
     results = cur.fetchone()
     if results:
-        recommendlist = GetRecommendResult(results[0])
-        hotlist = GetHotResult()
-        return render_template('index.html', recommendlist=recommendlist, hotlist=hotlist)
+        recommendlist = GetRecommendResult(results[0], 9)
+        hotList = GetHotResult()
+        print(recommendlist)
+        print(hotList)
+        return render_template('index.html', recommendlist=recommendlist, hotList=hotList)
     else:
         return render_template('registration.html')
 
@@ -95,22 +116,29 @@ def Encryption(password):
 
 
 # 推荐结果
-def GetRecommendResult(uid):
+def GetRecommendResult(uid, topK):
     recommendlist = []
     resultlist = []
+    # print(type(uid))
     if uid == 0:
         sql = """select fname, fcomment, ffunc, fstep, ftaste, url from food limit 9 offset 2"""
         cur.execute(sql)
         resultlist = cur.fetchall()
     else:
-        resultlist = []
+        for i in range(0, topK):
+            sql = """select fname, fcomment, ffunc, fstep, ftaste, url from food where fid='%s'""" % \
+                  RECOM_MAP[str(uid)][i]
+            cur.execute(sql)
+            resultlist.append(list(cur.fetchone()))
+        for i in range(0, len(resultlist)):
+            tmplist = list(resultlist[i])
+            tmplist.append(RANDKIND[random.randint(0, 2)])
     for i in range(0, len(resultlist)):
         tmplist = list(resultlist[i])
         tmplist.append(RANDKIND[random.randint(0, 2)])
 
         recommendlist.append(tmplist)
-        print(recommendlist)
-
+        # print(recommendlist)
     return recommendlist
 
 
