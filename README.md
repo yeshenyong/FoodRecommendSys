@@ -10,8 +10,7 @@
 - Python 爬虫.md （爬虫注意事项）
 - recommend.txt 产生推荐结果
 - jar包（hadoop MR阶段使用）
-
-
+- 数据库建表语句sql（只有两个表，一个user表，一个food表，分别存储user和food的相关信息，无外键链接）
 
 
 
