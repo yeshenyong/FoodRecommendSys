@@ -2,7 +2,7 @@
 
 # @Time    : 2021/10/26 19:40
 # @Author  : yeshenyong
-# @File    : spider.py
+# @File    : fsy.py
 
 import urllib.request, urllib.error
 import re

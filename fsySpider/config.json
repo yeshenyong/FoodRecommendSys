@@ -1,0 +1,9 @@
+{
+    "company_list": ["中材股份, 宝胜科技, 中电控股, 东方航空, 中华国际, 金瑞科技, 中国中旅, 中国建材"],
+    "target_name": ["资产负债比率", "营业总收入(元)", "扣非净利润(元)"],
+    "remove_html_tag": 1,
+    "since_date": "2018-01-01",
+    "start_page": 1,
+    "write_mode": ["csv"],
+    "original_pic_download": 1
+}
