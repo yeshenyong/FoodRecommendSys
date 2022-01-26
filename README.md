@@ -14,6 +14,10 @@
 
 
 
+![edc6ccc668bc72829f9e0cd3a42b97b](C:\Users\10505\Desktop\仓库\hadoop毕设\img\edc6ccc668bc72829f9e0cd3a42b97b.png)
+
+
+
 借鉴
 
 1. https://github.com/liushahe2012/Hadoop_ItemCF
