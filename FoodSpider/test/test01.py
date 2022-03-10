@@ -218,19 +218,37 @@ import os
 #     print(type(e))
 #     print(e.errMsg)
 
-class Student(object):
-    def __init__(self, name, age):
-        self.name = name
-        self.__age = age
-    def setAge(self, age):
-        if isinstance(age, int):
-            self.__age = age
-        else:
-            raise TypeError("类型错误")
-    def getAge(self):
-        return self.__age
-    age = property(getAge, setAge)
+# class Student(object):
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.__age = age
+#     def setAge(self, age):
+#         if isinstance(age, int):
+#             self.__age = age
+#         else:
+#             raise TypeError("类型错误")
+#     def getAge(self):
+#         return self.__age
+#     age = property(getAge, setAge)
+#
+# s1 = Student("ysy", 18)
+# s1.age = 19
+# print(s1.age)
+import pymysql
 
-s1 = Student("ysy", 18)
-s1.age = 19
-print(s1.age)
+sql = """select * from food where fid = 1"""
+conn = pymysql.connect(host='localhost', user='root', passwd='123456', database='foodserver', charset='utf8')
+
+cursor = conn.cursor()
+cursor.execute(sql)
+
+data = cursor.fetchone()
+
+print(type(data))
+print(data)
+
+conn.close()
+
+
+
+

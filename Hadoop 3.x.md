@@ -343,9 +343,22 @@ jps # 检验
 
 
 ```
-yeshenyong@hadoop102-hadoop-3.1.3$ sbin/start-dfs.sh
-yeshenyong@hadoop103-hadoop-3.1.3$ sbin/start-yarn.sh
+yeshenyong@hadoop102-hadoop-3.1.3$ /opt/module/hadoop-3.1.3/sbin/start-dfs.sh
+yeshenyong@hadoop103-hadoop-3.1.3$ /opt/module/hadoop-3.1.3/sbin/start-yarn.sh
 ```
+
+
+
+### MR
+
+```
+hadoop jar /opt/module/hadoop-3.1.3/share/hadoop/mapreduce/MapReduce-1.0-SNAPSHOT.jar com.food.mapreduce.foodRecommend.ItemCFMain /food/input /food/tmp3 /food/tmp4 /food/output2
+
+```
+
+
+
+hadoop102:9870 上面download下来
 
 
 

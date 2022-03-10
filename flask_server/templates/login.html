@@ -13,7 +13,7 @@
     <link href="static/assets1/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/assets1/css/style.css" rel="stylesheet">
     <link href="static/assets1/css/responsive.css" rel="stylesheet">
-    
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,25 +25,25 @@
 
 <body class="sticky-header">
 
- 
+
  <!--Start login Section-->
   <section class="login-section">
        <div class="container">
            <div class="row">
                <div class="login-wrapper">
                    <div class="login-inner">
-                       
+
                        <div class="logo">
                          <img src="static/assets1/images/logo-dark.png"  alt="logo"/>
                        </div>
-                   		
+
                    		<h2 class="header-title text-center">登录</h2>
-                        
+
                        <form action="/login", method="post">
                            <div class="form-group">
                                <input type="text" class="form-control"  placeholder="Username" name="username">
                            </div>
-                           
+
                            <div class="form-group">
                                <input type="password" class="form-control"  placeholder="Password" name="password">
                            </div>
@@ -55,31 +55,39 @@
                               <label for="checkbox-2">记住</label>
                             </div>
                            </div>
-                           
+
                            <div class="pull-right">
                            	   <a href="reset-password.html" class="a-link">
                                <i class="fa fa-unlock-alt"></i> 忘记密码
                                </a>
                            </div>
                          </div>
-                          
+
                            <div class="form-group">
                                <input type="submit" value="Login" class="btn btn-primary btn-block" >
                            </div>
-                           
+
                            <div class="form-group text-center">
                             无账号？<a href="{{ url_for('register') }}">注册</a>
                            </div>
-                           
+
+                           <div class="form-group text-center">
+                            <a href="{{ url_for('delete') }}">注销账号</a>
+                           </div>
+
+                           <div class="form-group text-center">
+                            <a href="{{ url_for('util') }}">修改密码</a>
+                           </div>
+
                        </form>
-                       
-                        <div class="copy-text"> 
+
+                        <div class="copy-text">
                          <p class="m-0">2021 &copy; 温镇杰</p>
                         </div>
-                    
+
                    </div>
                </div>
-               
+
            </div>
        </div>
   </section>

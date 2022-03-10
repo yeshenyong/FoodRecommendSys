@@ -1,6 +1,7 @@
 from flask import Flask, render_template, session, redirect, flash
 from flask import request
 
+import logging
 import pymysql
 import hashlib
 import traceback
@@ -63,7 +64,7 @@ def hello_world():
             """推荐列表
                 {[fid, fname, fcomment, ffunc, fstep, ftaste, url],[...]}
             """
-            print(recommendlist)
+            # print(recommendlist)
             return render_template("index.html", recommendlist=recommendlist, hotList=hotList)
 
 
@@ -134,9 +135,95 @@ def login_check():
                 resp.set_cookie('uid', str(results[0]), 60 * 60 * 24 * 30)
             return resp
         else:
-            flash("该用户名和密码不存在")
-            return redirect('registration.html')
+            # flash("该用户名和密码不存在")
+            # print("error")
+            return render_template('registration.html')
 
+@app.route('/util', methods=['GET'])
+def util():
+    return render_template('util.html')
+
+@app.route('/util', methods=['POST'])
+def util_check():
+    logging.info("util_check")
+
+    username = request.form['username']
+    passwd = request.form['password']
+    newpasswd = request.form['newpassword']
+    passwd = Encryption(passwd)
+    try:
+        sql = """ select uid, username, passwd from user where username='%s' and passwd='%s' """ % (username, passwd)
+        cur.execute(sql)
+        results = cur.fetchone()
+        print(results)
+        if results:
+            sql = """ update user set passwd='%s' where username='%s' """ % (Encryption(newpasswd), username)
+            logging.error(sql)
+            cur.execute(sql)
+            db.commit()
+            return redirect('/login')
+    except Exception as e:
+        print(e)
+    return render_template('util.html')
+
+@app.route('/delete', methods=['GET'])
+def delete():
+    return render_template('delete.html')
+
+
+@app.route('/delete', methods=['POST'])
+def delete_check():
+    logging.error("delete_check")
+    username = request.form['username']
+    passwd = request.form['password']
+    logging.error("username = %s, password = %s" % (username, passwd))
+    passwd = Encryption(passwd)
+
+    # 先处理登录，登录成功继续则保存进session，否则回到登录页
+    sql = """ select uid, username, passwd from user where username='%s' and passwd='%s' """ % (username, passwd)
+
+    cur.execute(sql)
+    results = cur.fetchone()
+
+    if results:
+
+        # 声明重定向到首页的对象
+        try:
+            sql = """ delete from user where username = '%s' """ % username
+
+            cur.execute(sql)
+            db.commit()
+        except Exception as e:
+            print(e)
+        resp = redirect('/login')
+        return resp
+
+    return render_template('delete.html', result=False)
+
+
+@app.route('/food/<string:food_name>')
+def food(food_name):
+    sql = """select * from food where fname='%s'""" % food_name
+    try:
+        cur.execute(sql)
+        food_info = cur.fetchone()
+    except Exception as e:
+        print('获取数据失败', e)
+    return render_template('detail.html', food_info=food_info)
+
+@app.route('/search', methods=['POST', 'GET'])
+def search():
+    search_name = request.form['search']
+    search_name = '%' + search_name + '%'
+    sql = """ select fname, fcomment, ffunc, fstep, ftaste, url from food  where fname like '%s'""" % search_name
+
+    try:
+        cur.execute(sql)
+        search_info = cur.fetchall()
+
+    except Exception as e:
+        logging.error('数据查询失败', e)
+    return render_template('search-result.html', resultlist=search_info)
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():

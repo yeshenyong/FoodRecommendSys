@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="utf-8">
@@ -63,6 +63,7 @@
             {% else %}
             <li><a href="{{ url_for('login_check') }}">登录</a></li>
         {% endif %}
+
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -211,7 +212,7 @@
                 <p>{{ item[2] }}</p>
                 <div class="portfolio-links">
                   <a href="{{ item[5] }}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="icofont-eye"></i></a>
-                  <a href="#" title="More Details"><i class="icofont-external-link"></i></a>
+                  <a href="{{ url_for('food', food_name=item[0]) }}" title="More Details"><i class="icofont-external-link"></i></a>
                 </div>
               </div>
             </div>
@@ -222,6 +223,21 @@
 
       </div>
     </section><!-- End Our Portfolio Section -->
+
+    <!-- ======= search Section ======= -->
+    <section id="search" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="section-title">
+          <h2>搜索</h2>
+       </div>
+        <form action="/search", method="post">
+        <div class="input-group">
+            <input type="text" class="form-control input-lg" name="search" placeholder="">
+            <input type="submit" value="搜索" class="btn btn-primary btn-block">
+        </div>
+        </form>
+      </div>
+    </section>
 
     <!-- ======= hots Section ======= -->
     <section id="team" class="team">
